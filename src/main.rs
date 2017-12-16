@@ -1,18 +1,19 @@
-// Entire function definition is a statement
+// Functions can return values
+// "-> i32" denotes return type and name isn't required
+fn add(a: i32, b: i32) -> i32 {
+    // Last expression is implicitly returned
+    // "return" can also be used to return
+    // adding ";" would result in compile time error, because this returns an empty tuple
+    a + b
+}
+
+fn sub(a: i32, b: i32) -> i32 {
+    return a - b;
+}
+
 fn main(){
-    // Statements perform action and return no value
-    // "let y = 6" or "let y = 5 + 6" as whole is a statement
-    // while "6" or "5 + 6" is an expression
-    let y = 6;
-    let y = 5 + 6;
+    let add = add(5, 6);
+    let sub = sub(6, 5);
 
-    // Blocks (everything within {}) that create new scope, is an expression
-    let y = {
-        let x = 3;
-        // No ";" at end denotes that its an expression
-        // If ";" added then it becomes a statement
-        x + 1
-    };
-
-    println!("y is {}", y);
+    println!("add is {}, sub is {}", add, sub);
 }
