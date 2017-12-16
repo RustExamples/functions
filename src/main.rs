@@ -1,13 +1,18 @@
-fn main() {
-    let x = 32;
-    let y = 64;
+// Entire function definition is a statement
+fn main(){
+    // Statements perform action and return no value
+    // "let y = 6" or "let y = 5 + 6" as whole is a statement
+    // while "6" or "5 + 6" is an expression
+    let y = 6;
+    let y = 5 + 6;
 
-    another_function(x, y);
-}
+    // Blocks (everything within {}) that create new scope, is an expression
+    let y = {
+        let x = 3;
+        // No ";" at end denotes that its an expression
+        // If ";" added then it becomes a statement
+        x + 1
+    };
 
-// Rust design require type annotation for function parameters
-// so that we need not specify type of variables to be passed
-// as arguments.
-fn another_function(x: i32, y: i32){
-    println!("x is {}, y is {}", x, y);
+    println!("y is {}", y);
 }
